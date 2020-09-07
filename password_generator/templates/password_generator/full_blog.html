@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% load static %}
+<link rel="icon" type="image/jpg" href="{% static 'password_generator_statimgs/password_generator_logo.jpg' %}">
+
+<title>Password Generator Blogs</title>
+
+<div class="container text-center">
+  <font size = 200><b><u>{{blog.title}}</u></b></font>
+  <h5>{{blog.date}}</h5>
+</div>
+
+<br><br><font size = 5>
+{{blog.description}}
+</font>
+
+<br><br><br>
+<center><a href="{% url 'guide' %}" class="btn btn-outline-primary">Back to User's Guide</a></center>

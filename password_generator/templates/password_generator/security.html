@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% load static %}
+
+<link rel="icon" type="image/jpg" href="{% static "password_generator_statimgs/password_generator_logo.jpg" %}">
+
+<title>Test Password Security</title>
+
+<h2><center>
+With {{lowercase}} lowercase characters, {{uppercase}} uppercase characters, {{numbers}} numbers, and {{specials}} special characters;
+<br></center></h2><br><br>
+
+
+<div class="container text-center">
+
+  {% if col == 'r' %}
+
+  <div class="alert alert-danger">
+    <h2>
+    <u>Security Level:</u> {{security_level}}
+    </h2>
+  </div>
+
+  <br>
+
+  <div class="alert alert-danger">
+    <h2>
+    <u>Security Score:</u> {{score}}
+    </h2>
+  </div>
+
+  {% elif col == 'y' %}
+
+  <div class="alert alert-warning">
+    <h2>
+    <u>Security Level:</u> {{security_level}}
+    </h2>
+  </div>
+
+  <br>
+
+  <div class="alert alert-warning">
+    <h2>
+    <u>Security Score:</u> {{score}}
+    </h2>
+  </div>
+
+  {% elif col == 'g' %}
+
+  <div class="alert alert-success">
+    <h2>
+    <u>Security Level:</u> {{security_level}}
+    </h2>
+  </div>
+
+  <br>
+
+  <div class="alert alert-success">
+    <h2>
+    <u>Security Score:</u> {{score}}
+    </h2>
+  </div>
+
+  {% elif col == 'b' %}
+
+  <div class="alert alert-info">
+    <h2>
+    <u>Security Level:</u> {{security_level}}
+    </h2>
+  </div>
+
+  <br>
+
+  <div class="alert alert-info">
+    <h2>
+    <u>Security Score:</u> {{score}}
+    </h2>
+  </div>
+
+  {% endif %}
+
+  <br><br>
+  <a href="{% url 'testsecurity' %}" class="btn btn-light btn-lg btn-block">Try Another Password</a>
+  <br><br><hr><br>
+  <a href="{% url 'home' %}" class="btn btn-outline-info">Home</a>
+
+</div>

@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% load static %}
+
+<link rel="icon" type="image/jpg" href="{% static 'password_generator_statimgs/password_generator_logo.jpg' %}">
+
+<title>Password Generator - home</title>
+
+<div class="container text-center">
+
+  <font size = 200><u><b>Password Generator</b></u></font>
+  <br><br><br><br>
+  <a href="{% url 'genpassword' %}" class="btn btn-primary btn-lg btn-block">Generate a random password</a>
+  <br><br><br>
+  <a href="{% url 'testsecurity' %}" class="btn btn-success btn-lg btn-block">Check security level of a password</a>
+
+</div>
+
+<br><br><hr><br><br><br><br><br><br><br>
+
+<div class="container text-center">
+
+  <a href="{% url 'guide' %}" class="btn btn-outline-info">
+    <img src="{% static 'password_generator_statimgs/password_generator_logo.jpg' %}" width="120">
+  </a><br>
+  <h4>Info and User's Guide</h4>
+
+</div>

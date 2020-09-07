@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% load static %}
+<link rel="icon" type="image/jpg" href="{% static 'password_generator_statimgs/password_generator_logo.jpg' %}">
+
+<title>Password Generator - guide</title>
+
+<center><font size="200"><b><u>User's Guide</u></b></font></center>
+<br><br>
+<h3><u>
+    Password Generator usage steps:<br></u>
+</h3><h4>
+    On the <a href="{% url 'home' %}">Home</a> page, there are 2 choices: <a href="" class="btn btn-primary btn-sm">Generate a random password</a>
+    and <a href="" class="btn btn-success btn-sm">Test password security level</a>. <br>
+    On choosing 'Generate a random password', you will be shown some options to configure the password to be generated,
+     like password length, whether to include uppercase letters, special characters and numbers, etc. <br>
+    After choosing these options, i.e., your password generation criteria, and pressing <a href="" class="btn btn-primary btn-sm">Generate Password</a>,
+    your password will be displayed on the screen.
+    <br>On reloading the page, another password will be generated using the same criteria.
+    <br><br>
+    On choosing 'test password security', you will be asked to enter a password. This password will not be stored anywhere or revealed anytime
+    <br>On clicking <a href="" class="btn btn-success btn-sm">Test security</a>, the password's security level rating
+    will be displayed along with a security score out of 28 points. <br>
+    Security level ratings will be like 'Terrible!', 'Average', 'Very Low', 'High', 'Virtually Unhackable!', etc. <br><br>
+    <b><u>NOTE: </u></b>
+    This site is completely secure and safe to use. Your passwords will not be stored anywhere on the server, and cannot
+    be accessed by anyone, not even us. The passwords entered by you to check security level will be deleted from the site
+    completely once you leave that page, and no one can access them on the server. <br>
+    Howerver, we recommend writing down these passwords as you may forget them.
+</h4>
+
+<br><br><hr>
+
+<center><font size="200"><b><u>Blogs</u></b></font></center>
+<br><br>
+
+{% for blog in blogs %}
+
+<h1><u><a href="{% url 'full_blog' blog.id %}" >{{blog.title}}</a></u></h1>
+<h5>{{blog.date}}<br></h5>
+<font size="4">
+    {{blog.description|safe|truncatechars:120}}
+</font><br><br><hr>
+
+{% endfor %}
+
+<br><br>
+<center><a href="{% url 'home' %}" class="btn btn-outline-primary">Home</a></center>
+<br><br><br>
