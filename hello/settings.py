@@ -121,8 +121,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
-# try:
-#     from .local_settings import *
+try:
+    from .local_settings import *
 
-# except ImportError:
-#     print('Looks like no local settings, are you on a server?')
+except ImportError:
+    print('Looks like no local settings, are you on a server?')
