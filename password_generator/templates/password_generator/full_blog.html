@@ -14,5 +14,9 @@
 {{blog.description|safe}}
 </font>
 
+{% if blog.assurance %}
+<br><h4><u>NOTE: </u>{{blog.assurance}}</h4>
+{% endif %}
+
 <br><br><br>
 <center><a href="{% url 'guide' %}" class="btn btn-outline-primary">Back to User's Guide</a></center>
