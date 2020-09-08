@@ -39,7 +39,7 @@
 <h1><u><a href="{% url 'full_blog' blog.id %}" >{{blog.title}}</a></u></h1>
 <h5>{{blog.date}}<br></h5>
 <font size="4">
-    {{blog.description|safe|truncatechars:120}}
+    {{blog.description|striptags|truncatechars:120}}
 </font><br><br><hr>
 
 {% endfor %}
